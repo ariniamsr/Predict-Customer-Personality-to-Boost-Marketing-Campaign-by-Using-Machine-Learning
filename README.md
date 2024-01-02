@@ -1,4 +1,4 @@
-# Predict-Customer-Personality-to-boost-marketing-campaign-by-using-Machine-Learning
+# Predict Customer Personality to boost marketing campaign by using Machine Learning
 
 ## Overview
 
