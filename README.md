@@ -254,7 +254,7 @@ dist_feats(features)
 
 ```
 
-![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/siloute.png) <br>
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/RFM.png) <br>
 
 #### Insights for each feature:<br>
 
