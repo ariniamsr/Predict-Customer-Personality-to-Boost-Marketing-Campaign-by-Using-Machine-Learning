@@ -168,7 +168,7 @@ for col in cols:
 ```
 ![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/after%20handling%20outlier.png
 )
-![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/monetary%20need%20handling%20outlier%20more.png)
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/monetary%20need%20handling%20outlier%20more.png) <br>
 It turns out that there are still some outliers in the monetary data. Let's handle with transformation.
 
 ```shell
