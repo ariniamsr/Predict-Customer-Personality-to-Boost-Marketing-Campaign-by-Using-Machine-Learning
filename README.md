@@ -105,16 +105,87 @@ we will remove unnecessary data. <br>
 df.drop(columns = ['Unnamed: 0','ID', 'Kidhome', 'Teenhome','Z_CostContact', 'Z_Revenue','Dt_Customer'], inplace=True)
  ```
 
+## Feature Encoding
+```shell
+df['Education'] = df['Education'].map({'S3' : 4, 'S2' : 3, 'S1':2, 'D3':1, 'SMA':0})
+df['grup_income'] = df['grup_income'].map({'Kaya':1, 'Biasa aja':0})
+df['grup_umur'] = df['grup_umur'].map({'Dewasa' : 1, 'Lansia': 0, 'Remaja':2})
+df['Marital_Status'] = df['Marital_Status'].map({'Single' : 0, 'Couple' : 1})
+```
+## Standardization of Features
+```shell
+from sklearn.preprocessing import StandardScaler, MinMaxScaler
+scd = StandardScaler()
+y_fit = scd.fit_transform(df.astype(float))
+y_fit
+```
+### K-Means Clustering - PCA
+```shell
+cluster = df[['Recency', 'Total_Purchases', 'total_pembelian']].copy()
+cluster.columns = ['Recency','Frequency','Monetary']
+features = ['Recency','Frequency','Monetary']
+cluster.describe(include='all')
+```
+
+<br>
+We want to see a graph of the RFM
+
+#### Subplot
+
+```shell
+cols = cluster.columns
+plt.figure(figsize= (15, 20))
+for i in range(len(cols)):
+    plt.subplot(6, 2, i+1)
+    sns.kdeplot(x = cluster[cols[i]])
+    plt.tight_layout()
+```
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/RFMpng.png)
+
+
+#### Boxplot
+
+```shell
+cols = cluster.columns
+plt.figure(figsize= (10,15))
+for i in range(len(cols)):
+    plt.subplot(4, 4, i+1)
+    sns.boxplot(y = cluster[cols[i]], orient='v')
+    plt.tight_layout()
+```
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/download.png)
+
+Looks like we have a few outliers. Time to handle them.
+
+## Handling Outliers
+
+```shell
+for col in cols:
+    high_cut = cluster[col].quantile(q=0.99)
+    low_cut= cluster[col].quantile(q=0.01)
+    cluster.loc[cluster[col]>high_cut,col]=high_cut
+    cluster.loc[cluster[col]<low_cut,col]=low_cut
+```
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/after%20handling%20outlier.png
+)
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/monetary%20need%20handling%20outlier%20more.png)
+It turns out that there are still some outliers in the monetary data. Let's handle with transformation.
+
+```shell
+tf_log = cluster.copy()
+tf_log['Monetary'] = np.log(cluster['Monetary'])
+
+plt.figure(figsize= (5, 5))
+sns.kdeplot(x = tf_log['Monetary'])
+plt.tight_layout()
+```
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/monetary%20handling%20outlier%20with%20transformasipng.png
+)
 
 
 
 
-
-
-
-
-
-
-
+```shell
+```
 
 
