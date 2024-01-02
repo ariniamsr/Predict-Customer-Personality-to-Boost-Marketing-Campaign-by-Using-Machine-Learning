@@ -258,28 +258,28 @@ dist_feats(features)
 
 #### Insights for each feature:<br>
 
-R, Recency: The higher the value of frequency, the more often the customer makes a purchase.<br>
-F, Total_Purchases: The higher the value of frequency, the more often the customer makes a purchase.<br>
-M, total Purchases: The higher the value of monetary, the more money the customer spends on purchases.<br>
+ • R, Recency: The higher the value of frequency, the more often the customer makes a purchase.<br>
+ • F, Total_Purchases: The higher the value of frequency, the more often the customer makes a purchase.<br>
+ • M, total Purchases: The higher the value of monetary, the more money the customer spends on purchases.<br>
 
 #### From the visualization above, we can draw the following conclusions:<br>
 
-Label 0 = has a high R pattern as well as F and M below the median.<br>
-Label 1 = has a high F and M pattern as well as R below the median.<br>
-Label 2 = has a low F, M, and R pattern.<br>
-Label 3 = has a high F, M, and R pattern.<br>
+ • Label 0 = has a high R pattern as well as F and M below the median.<br>
+ • Label 1 = has a high F and M pattern as well as R below the median.<br>
+ • Label 2 = has a low F, M, and R pattern.<br>
+ • Label 3 = has a high F, M, and R pattern.<br>
 
 
-Cluster 0: Most Loyal Customers:<br>
+ • Cluster 0: Most Loyal Customers:<br>
 Customers in this cluster last interacted with the business 74 days ago, with low shopping frequency and the highest spending.<br>
 
-Cluster 1: New Customers:<br>
+ • Cluster 1: New Customers:<br>
 Customers in this cluster have just interacted with the business within the last 22 days, with high shopping frequency and significant spending.<br>
 
-Cluster 2: Impactful Customers:<br>
+ • Cluster 2: Impactful Customers:<br>
 Customers in this cluster have just interacted with the business within the last 24 days, with low shopping frequency and a fair amount of spending.<br>
 
-Cluster 3: Passive Customers:<br>
+ • Cluster 3: Passive Customers:<br>
 Customers in this cluster last interacted with the business 73 days ago, with high shopping frequency and significant spending.<br>
 
 
