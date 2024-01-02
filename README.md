@@ -217,7 +217,7 @@ for i in n_cluster:
     visualizer = SilhouetteVisualizer(kmeans, colors='yellowbrick', ax=ax[q-1][mod])
     visualizer.fit(df_std)
 ```
-![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/kmeans.png) <br>
+![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/siloute.png) <br>
 The silhouette score that is good is the one on the lower right with an average value of 0.6, so the performance of the model obtained from the silhouette score is also better. In addition, if you pay attention. In general, a silhouette value that approaches 1 indicates that the data clustering within that cluster is very good.
 
 
