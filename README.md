@@ -2,7 +2,7 @@
 
 ## overview
 
-“ A company can develop rapidly when it knows the behavior of it’s customer personality, so that it can provide better services and benefits to customers who have the potential to become loyal customers. By processing historical marketing campaign data to improve performance and target the right customers, so they can transcat on the company’s platform, from this data insight our focus is to create a cluster prediction model to make it easir for companies to make decisions.
+“ A company can develop rapidly when it knows the behavior of it’s customer personality, so that it can provide better services and benefits to customers who have the potential to become loyal customers. By processing historical marketing campaign data to improve performance and target the right customers, so they can transcat on the company’s platform, from this data insight our focus is to create a cluster prediction model to make it easir for companies to make decisions. “
 
 ## Exploratory Data Analysis
 
@@ -24,6 +24,7 @@ From the boxplot above, it can be seen that there is an outlier that is not too 
 ![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/Multivariate%20Analysis.png
 )
 <br>
+
 ## Conversion Rate 
 ### Conversion Rate Based On Age
 ![image](https://github.com/ariniamsr/Predict-Customer-Personality-to-Boost-Marketing-Campaign-by-Using-Machine-Learning/blob/main/Pic/Conversion%20Ratio%20Based%20on%20Age.png
@@ -35,8 +36,24 @@ There is a significant relationship between customer age and conversion rate, wh
 ) <br>
 The graph above shows the relationship between conversion rate and the number of children. It can be seen that people with no children tend to have a higher conversion rate than people with one or more children.
 
+## Data Preprocessing  <br>
+According to the results, Income has 24 null values, conversion_rate has 11, and Total_Transaksi has 24.
 
+### Handling Missing Value
+We handle missing values using the following query,
+```shell
+df['Income'].fillna(df['Income'].mean(), inplace=True) <br>
+df['conversion_rate'] = df['conversion_rate'].fillna(0) <br>
+df['Total_Transaksi'].fillna(df['Total_Transaksi'].mean(), inplace=True) <br>
+```
+### Handling Duplicated Data
+there are no duplicates in our data
 
+### Drop Data
+we will remove unnecessary data. <br>
+```shell
+df.drop(columns = ['Unnamed: 0','ID', 'Kidhome', 'Teenhome','Z_CostContact', 'Z_Revenue','Dt_Customer'], inplace=True)
+ ```
 
 
 
