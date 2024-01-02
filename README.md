@@ -48,7 +48,9 @@ df['Total_Transaksi'].fillna(df['Total_Transaksi'].mean(), inplace=True)
 ```
 ### Handling Duplicated Data
 there are no duplicates in our data
-
+```shell
+df.duplicated().sum()
+```
 ### Drop Data
 we will remove unnecessary data. <br>
 ```shell
