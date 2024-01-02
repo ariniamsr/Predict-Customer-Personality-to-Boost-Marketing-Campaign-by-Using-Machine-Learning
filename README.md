@@ -4,6 +4,54 @@
 
 “ A company can develop rapidly when it knows the behavior of it’s customer personality, so that it can provide better services and benefits to customers who have the potential to become loyal customers. By processing historical marketing campaign data to improve performance and target the right customers, so they can transcat on the company’s platform, from this data insight our focus is to create a cluster prediction model to make it easir for companies to make decisions. “
 
+## Load Data
+```shell
+df = pd.read_csv("marketing_campaign_data.csv")
+df.head(12)
+```
+
+## Feature Engineering
+## Conversion rate
+```shell
+df['conversion_rate'] = df['Response'] / df['NumWebVisitsMonth']
+df
+```
+
+## Age 
+```shell
+def kelompok_usia(x):
+    if x['Year_Birth'] <= 1954:
+        kelompok = 'Lansia'
+    elif x['Year_Birth'] >= 1955 and x['Year_Birth'] <= 1993: 
+        kelompok = 'Dewasa'
+    else: 
+        kelompok  = 'Remaja'
+    return kelompok  
+
+df['grup_umur'] = df.apply(lambda x: kelompok_usia(x), axis=1)
+```
+
+## Social status 
+```shell
+def kesejahteraan_masyakat(x):
+    if x['Income'] >= 5.174150e+07:
+        kelompok = 'Kaya'
+    else: 
+        kelompok  = 'Biasa aja'
+    return kelompok  
+
+df['grup_income'] = df.apply(lambda x: kesejahteraan_masyakat(x), axis=1) 
+```
+
+## Number of children, Total transactions and Total expenses
+```shell
+df['Total_Purchases'] = df['NumDealsPurchases'] + df['NumWebPurchases']+df['NumCatalogPurchases']+df['NumStorePurchases']+df['NumWebVisitsMonth']
+df['jumlah_anak'] = df['Kidhome'] + df['Teenhome']
+df['total_pembelian'] = df['MntCoke']+df['MntFruits']+df['MntMeatProducts']+df['MntFishProducts']+df['MntSweetProducts']+df['MntGoldProds']
+df['Total_Transaksi'] = df['Income'] - df['total_pembelian'] 
+df['total_acc_cmp'] = df['AcceptedCmp2'] + df['AcceptedCmp1'] + df['AcceptedCmp5'] + df['AcceptedCmp3'] + df['AcceptedCmp4'] 
+```
+
 ## Exploratory Data Analysis
 
 ### Univariate Analysis
