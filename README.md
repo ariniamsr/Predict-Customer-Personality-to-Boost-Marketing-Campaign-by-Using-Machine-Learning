@@ -42,9 +42,9 @@ According to the results, Income has 24 null values, conversion_rate has 11, and
 ### Handling Missing Value
 We handle missing values using the following query,
 ```shell
-df['Income'].fillna(df['Income'].mean(), inplace=True) <br>
-df['conversion_rate'] = df['conversion_rate'].fillna(0) <br>
-df['Total_Transaksi'].fillna(df['Total_Transaksi'].mean(), inplace=True) <br>
+df['Income'].fillna(df['Income'].mean(), inplace=True) 
+df['conversion_rate'] = df['conversion_rate'].fillna(0) 
+df['Total_Transaksi'].fillna(df['Total_Transaksi'].mean(), inplace=True) 
 ```
 ### Handling Duplicated Data
 there are no duplicates in our data
