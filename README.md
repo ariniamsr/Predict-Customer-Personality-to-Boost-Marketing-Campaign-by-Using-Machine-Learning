@@ -308,7 +308,7 @@ print('Potential Impact of Cluster 3: {:.2f}%'.format(potential_impact_cluster_3
 print('Potential Impact of Cluster 1: {:.2f}%'.format(potential_impact_cluster_1))
 ```
 
-output:
+output:<br>
 Total Spent of Cluster 0: Rp 88453000<br>
 Total Spent of Cluster 1: Rp 557668000<br>
 Total Spent of Cluster 2: Rp 80137000<br>
