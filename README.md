@@ -11,13 +11,13 @@ df.head(12)
 ```
 
 ## Feature Engineering
-## Conversion rate
+### Conversion rate
 ```shell
 df['conversion_rate'] = df['Response'] / df['NumWebVisitsMonth']
 df
 ```
 
-## Age 
+### Age 
 ```shell
 def kelompok_usia(x):
     if x['Year_Birth'] <= 1954:
@@ -31,7 +31,7 @@ def kelompok_usia(x):
 df['grup_umur'] = df.apply(lambda x: kelompok_usia(x), axis=1)
 ```
 
-## Social status 
+### Social status 
 ```shell
 def kesejahteraan_masyakat(x):
     if x['Income'] >= 5.174150e+07:
@@ -43,7 +43,7 @@ def kesejahteraan_masyakat(x):
 df['grup_income'] = df.apply(lambda x: kesejahteraan_masyakat(x), axis=1) 
 ```
 
-## Number of children, Total transactions and Total expenses
+### Number of children, Total transactions and Total expenses
 ```shell
 df['Total_Purchases'] = df['NumDealsPurchases'] + df['NumWebPurchases']+df['NumCatalogPurchases']+df['NumStorePurchases']+df['NumWebVisitsMonth']
 df['jumlah_anak'] = df['Kidhome'] + df['Teenhome']
