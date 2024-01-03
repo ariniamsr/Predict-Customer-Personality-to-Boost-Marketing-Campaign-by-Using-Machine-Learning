@@ -318,4 +318,4 @@ Potential Impact of Cluster 3: 46.33%<br>
 Potential Impact of Cluster 1: 41.21%<br>
 
 
-If we calculate the potential impact by focusing on retargeting marketing on Cluster 3 and Cluster 1, the total spending we will receive is Rp 62,685,500,000 for Cluster 3 and Rp 55,766,800,000 for Cluster 1, with a potential impact of 46.33% and 41.21%.
+Focusing our retargeting efforts on Cluster 3 and Cluster 1 could yield significant returns. We can expect to secure around Rp 62.7 billion from Cluster 3 and Rp 55.8 billion from Cluster 1, translating to potential impact rates of 46.3% and 41.2% respectively. In essence, prioritizing these clusters presents a promising avenue for boosting revenue and customer engagement.
